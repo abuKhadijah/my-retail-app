@@ -1070,7 +1070,7 @@ Run `npm test -- --coverage` (note extra `--` in the middle) to include a covera
 
 Note that tests run much slower with coverage so it is recommended to run it separately from your normal workflow.
 
-### Continuous Integration and Continuous delivery
+### Continuous Integration
 
 <img src ='./images/continuous-delivery.png' width = '700'>
 By default `npm test` runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called `CI`.
