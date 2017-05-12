@@ -1,0 +1,364 @@
+/* Page template */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Grid style helpers */
+
+.grid-container {
+  display: grid;
+}
+
+.grid-align-self-center {
+  align-self: center;
+}
+
+.grid-justify-self-center {
+  justify-self: center;
+}
+
+.grid-justify-self-end {
+  justify-self: end;
+}
+
+.grid-justify-self-start {
+  justify-self: start;
+}
+
+.grid-gap-4px {
+  grid-gap: 4px;
+}
+
+/* Flexbox style helpers */
+.flex-container {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-justify-content-space-between {
+  justify-content: space-between;
+}
+
+/* Color helpers */
+.red {
+  color: #c00;
+}
+
+.gray97 {
+  color: #f7f7f7;
+}
+
+.gray84 {
+  color: #d6d6d6;
+}
+
+.background-gray97 {
+  background: #f7f7f7;
+}
+
+/* For all devices with screen width less than 768px */
+@media (max-width: 767px) {
+  .product-catalog-entry {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "title" "carousel" "price" "promotions" "quantity-selector" "purchase-options" "return-policy" "shareable-options" "product-highlights" "review";
+  }
+
+  .detailed-comment, .view-all-review {
+    font-size: 12px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-catalog-entry {
+    margin: 40px;
+  }
+
+  .overall-stars, .store-pickup, .add-to-cart {
+    font-size: 15px;
+  }
+
+  .add-to-registry-button, .add-to-list-button, .share-button {
+    font-size: 12px;
+  }
+
+  .quantity-selector {
+    width: 50%;
+  }
+}
+
+/* For all devices with screen widths greater than 768px */
+
+@media (min-width: 768px) {
+  .product-title {
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+    -ms-justify-self: center;
+    justify-self: center;
+  }
+
+  .product-carousel {
+    justify-self: center;
+  }
+
+  .product-catalog-entry {
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "title price" "title promotions" "carousel quantity-selector" "carousel purchase-options" "carousel return-policy" "carousel shareable-options" "carousel product-highlights" "review product-highlights";
+    margin: 70px;
+  }
+
+  .overall-stars, .store-pickup, .add-to-cart {
+    font-size: 24px;
+  }
+
+  .quantity-selector {
+    width: 45%;
+  }
+}
+
+/* Grid areas */
+.product-title {
+  grid-area: title;
+}
+
+.product-carousel {
+  grid-area: carousel;
+  max-width: 300px;
+}
+
+.product-review {
+  grid-area: review;
+}
+
+.product-price {
+  grid-area: price;
+  padding-bottom: 20px;
+}
+
+.product-promotions {
+  grid-area: promotions;
+}
+
+.quantity-selector {
+  grid-area: quantity-selector;
+}
+
+.purchase-options {
+  grid-area: purchase-options;
+}
+
+.return-policy {
+  grid-area: return-policy;
+}
+
+.shareable-options {
+  grid-area: shareable-options;
+}
+
+.product-highlights {
+  grid-area: product-highlights;
+}
+
+.quantity-label {
+  grid-area: quantity-label;
+}
+
+.increment {
+  grid-area: increment;
+}
+
+.decrement {
+  grid-area: decrement;
+}
+
+/* End Grid Areas*/
+
+/* Product highlights*/
+.product-highlights li {
+  list-style: none;
+  font-size: 13px;
+  font-weight: normal;
+  color: #666;
+}
+
+.product-highlights li:before {
+  content: "•";
+  vertical-align: middle;
+  line-height: 20px;
+  display: inline-block;
+  width: 1em;
+}
+/* Product highlights*/
+
+/* Price */
+.product-formatted-price {
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.price-qualifier {
+  color: #666;
+  font-size: 10px;
+}
+/* Price */
+
+/* Promotions */
+.product-price, .product-promotions {
+  border-bottom: 1px solid #dedfe0;
+  padding-bottom: 25px;
+}
+
+.promotion-text {
+  font-size: 13px;
+}
+
+.promotion-icon {
+  padding-right: 5px;
+}
+
+/* Promotions */
+
+.product-promotions, .quantity-selector, .purchase-options, .return-policy, .product-highlights {
+  margin: 20px 0;
+}
+
+/* Quantity Selector */
+/* quantity selector */
+.quantity-selector {
+  display: grid;
+  border: 1px solid #6f7477;
+  padding: 6px;
+  border-radius: 3px;
+  grid-template-areas: "quantity-label quantity-controls-container";
+  grid-template-columns: 50% 40%;
+}
+
+.quantity-controls-container {
+  grid-area: quantity-controls-container;
+  justify-content: space-between;
+}
+
+.circular-button {
+  border-radius: 50%;
+  border: 0.1px solid white;
+  box-shadow: none;
+  font-size: 18px;
+  line-height: 1.0;
+  width: 30px;
+  height: 30px;
+}
+
+.quantity-value {
+  grid-area: quantity-value;
+}
+
+/* Reviews */
+.pro-comment-header {
+  grid-area: pro-comment-header;
+}
+
+.con-comment-header {
+  grid-area: con-comment-header;
+}
+
+.pro-comment-body {
+  grid-area: pro-comment-body;
+  display: flex;
+  flex-direction: column;
+}
+
+.con-comment-body {
+  grid-area: con-comment-body;
+}
+
+.most-helpful-reviews {
+  padding: 10px;
+  border-radius: 3px;
+  background: #f7f7f7;
+}
+
+.all-review {
+  padding: 10px;
+}
+
+.most-helpful-reviews-hdr {
+  border-bottom: 1px solid #dedfe0;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-areas: "pro-comment-header con-comment-header"
+}
+
+.most-helpful-reviews-body {
+  padding-top: 10px;
+  display: grid;
+  grid-template-areas: "pro-comment-body con-comment-body"
+}
+
+.product-review {
+  padding: 15px;
+}
+
+.most-helpful-reviews-label, .detail-comment, .review-creator, .review-posted-date {
+  font-size: 12px;
+}
+
+.review-creator {
+  padding-right: 5px;
+}
+
+.review-creation-details {
+  padding: 10px 0;
+}
+
+.pro-comment-rating {
+  font-size: 12px;
+}
+
+/* Review */
+
+/* Purchasing Options */
+.purchasing-options {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
+}
+
+.store-pickup {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.store-pickup, .add-to-cart {
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #c00;
+  border: 1px solid #c00;
+}
+
+/* Shareable options */
+.add-to-registry-button, .add-to-list-button, .share-button {
+  border: none;
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+.shareable-options {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4px;
+}
+
+/* Shareable options */
